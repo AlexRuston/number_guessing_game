@@ -112,7 +112,7 @@ fn get_difficulty()-> i64 {
         .expect("expected to read line");
 
     // cast to int
-    let difficulty: i64 = difficulty.trim().parse().unwrap();
+    let difficulty: i64 = difficulty.trim().parse::<i64>().expect("That's not a number");
 
     // return
     return difficulty;
