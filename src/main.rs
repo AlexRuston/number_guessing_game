@@ -47,19 +47,19 @@ fn main() {
 
     // for added flavour, lets belittle the user if the take a long time to input a number 10 or below
     if attempts_diff > 5 {
-        let attempts_string = format!("Did that really just take you {} attemps to pick a number lower than 10?.\nBless you...", &difficulty);
+        let attempts_string = format!("Did that really just take you {} attemps to pick a number lower than 10?.\nBless you...", difficulty);
         slow_print(&attempts_string, speed);
     }
 
-    let difficulty_string = format!("\nWow!\n{}\nYou're brave.\nOkay, lets get to it.", &difficulty);
+    let difficulty_string = format!("\nWow!\n{}\nYou're brave.\nOkay, lets get to it.\n", difficulty);
     slow_print(&difficulty_string, speed);
 
-    slow_print("Beep...\nHmm...\nBoop...", 90);
+    slow_print("Beep...\nHmm...\nBoop...\n", 90);
 
     // assign a number between 1 and the difficulty level the user chose -> this needs to be a u32 in order for .cmp to accept it
     let computer_number = rand::thread_rng().gen_range(1..=difficulty) as u32;
 
-    slow_print("Okay, I've thought of a number...\nCan you guess what it is?", speed);
+    slow_print("Okay, I've thought of a number...\nCan you guess what it is?\n", speed);
     
     loop {
         let mut guess = String::new();
